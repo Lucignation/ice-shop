@@ -51,6 +51,12 @@ export const userSlice = createSlice({
       localStorage.setItem('token', action.payload.token);
       state.token = action.payload.token;
     },
+    GetProducts: (state: IAccount, action: PayloadAction<IProduct[]>) => {
+      return {
+        ...state,
+        products: action.payload,
+      };
+    },
     RemoveItem: (state: IAccount, action: PayloadAction<IProduct>) => {
       return {
         ...state,
@@ -84,7 +90,15 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser, logOut, setLogin, RemoveItem, AddItem, AddUser, UpdateUser } =
-  userSlice.actions;
+export const {
+  setUser,
+  logOut,
+  setLogin,
+  GetProducts,
+  RemoveItem,
+  AddItem,
+  AddUser,
+  UpdateUser,
+} = userSlice.actions;
 
 export default userSlice.reducer;

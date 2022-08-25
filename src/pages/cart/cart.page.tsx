@@ -23,7 +23,7 @@ const Cart: FC<props> = () => {
   return (
     <div>
       <h2>Cart</h2>
-      {cart.length > 1 ? (
+      {cart.length > 0 ? (
         <table>
           <thead>
             <tr>

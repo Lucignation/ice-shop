@@ -7,7 +7,7 @@ import { RemoveItem } from '../../store/Reducer';
 type props = {
   index: number;
   product: IProduct;
-  removeItem: () => void;
+  removeItem: (product: IProduct) => void;
 };
 
 const CartItem: FC<props> = ({ index, product, removeItem }) => {
@@ -15,7 +15,8 @@ const CartItem: FC<props> = ({ index, product, removeItem }) => {
 
   const { title, image, price } = product;
 
-  const handleRemove = () => {
+  const handleRemove = (product:IProduct) => {
+    console.log('product = ', product)
     dispatch(RemoveItem(product));
   };
   return (
@@ -26,7 +27,8 @@ const CartItem: FC<props> = ({ index, product, removeItem }) => {
         <img src={image} alt={title} />
       </td>
       <td>{price}</td>
-      <td onClick={removeItem}>Remove</td>
+      {/* <td onClick={() => removeItem(product)}>Remove</td> */}
+      <td onClick={() => handleRemove(product)}>Remove</td>
     </tr>
   );
 };
