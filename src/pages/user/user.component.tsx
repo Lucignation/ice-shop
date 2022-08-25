@@ -144,7 +144,7 @@ const User = () => {
           value={phone}
         />
 
-        <input type='submit' value='add' />
+        <input type='submit' value='add user' />
       </form>
     </div>
   );
