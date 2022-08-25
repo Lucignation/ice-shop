@@ -2,29 +2,9 @@ import { FC, useState } from 'react';
 import { IUser } from '../../common/interfaces';
 import Input from '../../components/Input/input.component';
 
-const User = () => {
-  //   const [user, setUser] = useState<IUser>({
-  //     id: 0,
-  //     email: '',
-  //     username: '',
-  //     password: '',
-  //     name: {
-  //       firstname: '',
-  //       lastname: '',
-  //     },
-  //     address: {
-  //       city: '',
-  //       street: '',
-  //       number: 0,
-  //       zipcode: '',
-  //       geolocation: {
-  //         lat: '',
-  //         long: '',
-  //       },
-  //     },
-  //     phone: '',
-  //   });
+import axiosInstance from '../../axios/index';
 
+const User = () => {
   //input states
   const [email, setEmail] = useState<string>('');
   const [username, setUsername] = useState<string>('');
@@ -39,7 +19,7 @@ const User = () => {
   const [long, setLong] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const user = {
       email,
@@ -61,7 +41,9 @@ const User = () => {
       },
       phone: phone,
     };
-    console.log(user);
+    const url = 'users';
+    const res = await axiosInstance.post(url, user);
+    console.log(res);
   };
   return (
     <div>
