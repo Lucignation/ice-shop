@@ -63,6 +63,20 @@ export const userSlice = createSlice({
         cart: state.cart.concat(action.payload),
       };
     },
+
+    AddUser: (state: IAccount, action: PayloadAction<IUser>) => {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    },
+
+    UpdateUser: (state: IAccount, action: PayloadAction<IUser>) => {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    },
     logOut: () => {
       localStorage.removeItem('token');
     },
@@ -70,7 +84,7 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser, logOut, setLogin, RemoveItem, AddItem } =
+export const { setUser, logOut, setLogin, RemoveItem, AddItem, AddUser, UpdateUser } =
   userSlice.actions;
 
 export default userSlice.reducer;

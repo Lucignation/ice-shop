@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState, useEffect, ChangeEvent } from 'react';
 
 import HandleIcon from '../../assets/images/handleicon.svg';
 import EyeIcon from '../../assets/images/eyeicon.svg';
@@ -8,23 +8,17 @@ import styles from './input.module.scss';
 type props = {
   formType?: string;
   placeholder?: string;
-  signin: string;
-  setSignin: any;
+  value: string | number;
+  setValue: any;
   name: string;
 };
 
-const Input: FC<props> = ({
-  formType,
-  placeholder,
-  name,
-  setSignin,
-  signin,
-}) => {
+const Input: FC<props> = ({ formType, placeholder, name, setValue, value }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  // const handleSignup = () => {
-
-  // }
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
 
   const showTogglePassword = () => {
     setShowPassword(!showPassword);
@@ -39,8 +33,8 @@ const Input: FC<props> = ({
             placeholder={placeholder}
             className={`form-control ${styles.input}`}
             name={name}
-            value={signin}
-            onChange={(e) => setSignin(e.target.value)}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
           />
           <span className={`input-group-text`} onClick={showTogglePassword}>
             {showPassword ? (
@@ -57,8 +51,8 @@ const Input: FC<props> = ({
             placeholder={placeholder}
             className={`form-control ${styles.input}`}
             name={name}
-            value={signin}
-            onChange={(e) => setSignin(e.target.value)}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
           />
           <span className={`input-group-text`}>
             <img src={HandleIcon} alt='handle' />

@@ -63,15 +63,15 @@ const Signin: FC<props> = () => {
               formType='input'
               placeholder='Username'
               name='agentId'
-              setSignin={setUsername}
-              signin={username}
+              setValue={setUsername}
+              value={username}
             />
             <Input
               formType='password'
               placeholder='Password'
               name='password'
-              setSignin={setPassword}
-              signin={password}
+              setValue={setPassword}
+              value={password}
             />
 
             <div className={styles.horizontal_line}></div>
