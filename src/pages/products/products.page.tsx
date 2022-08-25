@@ -6,6 +6,9 @@ import { IProduct } from '../../common/product.interface';
 //import from components
 import Product from '../../components/product/product.component';
 
+//import styles
+import styles from './products.module.scss';
+
 import axiosInstance from '../../axios/index';
 
 const Products = () => {
@@ -25,9 +28,13 @@ const Products = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className={styles.products}>
       {products ? (
-        products.map((p: IProduct) => <Product product={p} key={p.id} />)
+        products.map((product: IProduct) => (
+          <div key={product.id}>
+            <Product product={product} />
+          </div>
+        ))
       ) : (
         <p>Loading...</p>
       )}

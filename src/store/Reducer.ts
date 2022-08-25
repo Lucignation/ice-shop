@@ -51,6 +51,18 @@ export const userSlice = createSlice({
       localStorage.setItem('token', action.payload.token);
       state.token = action.payload.token;
     },
+    RemoveItem: (state: IAccount, action: PayloadAction<IProduct>) => {
+      return {
+        ...state,
+        cart: state.cart.filter((product) => product.id !== action.payload.id),
+      };
+    },
+    AddItem: (state: IAccount, action: PayloadAction<IProduct>) => {
+      return {
+        ...state,
+        cart: state.cart.concat(action.payload),
+      };
+    },
     logOut: () => {
       localStorage.removeItem('token');
     },
@@ -58,6 +70,7 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser, logOut, setLogin } = userSlice.actions;
+export const { setUser, logOut, setLogin, RemoveItem, AddItem } =
+  userSlice.actions;
 
 export default userSlice.reducer;

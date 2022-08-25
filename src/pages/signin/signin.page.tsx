@@ -9,7 +9,7 @@ import { setLogin } from '../../store/Reducer';
 
 //styles
 import styles from './signin.module.scss';
-import Button from '../../components/Button/button.component';
+import Button from '../../components/button/button.component';
 import Input from '../../components/Input/input.component';
 
 type props = {};
