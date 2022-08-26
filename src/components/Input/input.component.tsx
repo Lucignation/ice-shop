@@ -54,9 +54,6 @@ const Input: FC<props> = ({ formType, placeholder, name, setValue, value }) => {
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <span className={`input-group-text`}>
-            <img src={HandleIcon} alt='handle' />
-          </span>
         </div>
       )}
     </div>

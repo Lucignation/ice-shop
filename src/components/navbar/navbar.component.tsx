@@ -1,28 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import { logOut } from '../../store/Reducer';
 import { RootState } from '../../store/store';
 
+import styles from './navbar.module.scss';
+
 const Navbar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const currentState = useSelector((state: RootState) => state.user);
 
   const { cart } = currentState;
 
-  const userToken: string | null = localStorage.getItem('token');
-
-  const [token, setToken] = useState<string | null>(userToken);
-
-  useEffect(() => {
-    setToken(userToken);
-  }, [token]);
+  const token: string | null = localStorage.getItem('token');
 
   const handleLogout = () => {
     dispatch(logOut());
+    navigate('/');
   };
   return (
     <nav className='navbar navbar-expand-lg bg-light'>
@@ -102,16 +100,22 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <NavLink to='/cart'>
-            <span className='navbar-text'>Cart</span>
-            <span className='navbar-text'>{cart.length}</span>
-          </NavLink>
+          <div className={styles.cart}>
+            <NavLink to='/cart'>
+              <span className={`navbar-text ${styles.cart_link}`}>Cart</span>\
+            </NavLink>
+            <span className={`navbar-text ${styles.item_num}`}>
+              {cart.length}
+            </span>
+          </div>
           {token ? (
-            <span className='navbar-text' onClick={handleLogout}>
+            <span className='navbar-text btn' onClick={handleLogout}>
               Logout
             </span>
           ) : (
-            <span className='navbar-text'>Login</span>
+            <NavLink to='/signin'>
+              <span className='navbar-text'>Login</span>
+            </NavLink>
           )}
         </div>
       </div>
