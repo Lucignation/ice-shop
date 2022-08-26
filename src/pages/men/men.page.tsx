@@ -1,47 +1,41 @@
-import { useState, useEffect } from 'react';
+import { FC } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+import axiosInstance from '../../axios/index';
+
+import Product from '../../components/product/product.component';
+import { GetProducts } from '../../store/Reducer';
 
 //import from interface
 import { IProduct } from '../../common/product.interface';
 
-//import from components
-import Product from '../../components/product/product.component';
-import { GetProducts } from '../../store/Reducer';
-
-//import styles
-import styles from './products.module.scss';
-
-import axiosInstance from '../../axios/index';
 import { RootState } from '../../store/store';
 
-const Products = () => {
+type props = {};
+const Men: FC<props> = () => {
   const dispatch = useDispatch();
   const currentState = useSelector((state: RootState) => state.user);
 
   const { products } = currentState;
 
-  //   const [products, setProducts] = useState<IProduct[]>();
-
   useEffect(() => {
-    const url = 'products';
-    try {
-      const fetchProducts = async () => {
-        const res = await axiosInstance.get(url);
+    const url = "products/category/men's clothing";
 
-        //   setProducts(res.data);
+    try {
+      const fetchMenWears = async () => {
+        const res = await axiosInstance.get(url);
         dispatch(GetProducts(res.data));
       };
-
-      fetchProducts();
+      fetchMenWears();
     } catch (error) {
       console.log(error);
     }
   }, []);
 
-  console.log(products);
-
   return (
-    <div className={styles.products}>
+    <div>
+      <h3>Electronics</h3>
       {products.length > 1 ? (
         products.map((product: IProduct) => (
           <div key={product.id}>
@@ -49,10 +43,10 @@ const Products = () => {
           </div>
         ))
       ) : (
-        <p>Loading...</p>
+        <p>LOading</p>
       )}
     </div>
   );
 };
 
-export default Products;
+export default Men;

@@ -1,9 +1,5 @@
 import { IProduct } from '../common/product.interface';
 
-export type UserContextState = {
-  user: {};
-};
-
 export interface IAccount {
   user: IUser;
   token: string;
@@ -36,15 +32,4 @@ export interface IUser {
     };
   };
   phone: string;
-}
-
-export interface IBank {
-  _id: string;
-  accountName: string;
-  accountNumber: number;
-  bankName: string;
-  balance: number;
-  userId: string;
-  createdAt: string;
-  updatedAt: string;
 }

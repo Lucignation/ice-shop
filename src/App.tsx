@@ -11,6 +11,11 @@ import { ToastContainer } from 'react-toastify';
 import Signin from './pages/signin/signin.page';
 import Products from './pages/products/products.page';
 import Cart from './pages/cart/cart.page';
+import Electronics from './pages/electronics/electronics.page';
+import Jewelery from './pages/jewelery/jewelery.page';
+import Men from './pages/men/men.page';
+import Women from './pages/women/women.page';
+
 import User from './pages/user/user.component';
 
 import Navbar from './components/navbar/navbar.component';
@@ -43,6 +48,42 @@ const App = () => {
             element={
               <PrivateRoute>
                 <User />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='/electronics'
+            element={
+              <PrivateRoute>
+                <Electronics />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='/jewelery'
+            element={
+              <PrivateRoute>
+                <Jewelery />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='/men'
+            element={
+              <PrivateRoute>
+                <Men />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='/women'
+            element={
+              <PrivateRoute>
+                <Women />
               </PrivateRoute>
             }
           />

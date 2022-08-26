@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { logOut } from '../../store/Reducer';
 import { RootState } from '../../store/store';
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const currentState = useSelector((state: RootState) => state.user);
 
@@ -43,28 +44,60 @@ const Navbar = () => {
         <div className='collapse navbar-collapse' id='navbarText'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
             <li className='nav-item'>
-              <a className='nav-link active' aria-current='page' href='/'>
+              <a
+                className={
+                  location.pathname === '/' ? 'nav-link active' : 'nav-link'
+                }
+                aria-current='page'
+                href='/'
+              >
                 Home
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/electronics'>
+              <a
+                className={
+                  location.pathname === '/electronics'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                href='/electronics'
+              >
                 Electronics
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/jewelery'>
+              <a
+                className={
+                  location.pathname === '/jewelery'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                href='/jewelery'
+              >
                 Jewelery
               </a>
             </li>
             <li className='nav-item'>
-              <a className='nav-link' href='/men'>
+              <a
+                className={
+                  location.pathname === '/men' ? 'nav-link active' : 'nav-link'
+                }
+                href='/men'
+              >
                 Men
               </a>
             </li>
 
             <li className='nav-item'>
-              <a className='nav-link' href='/women'>
+              <a
+                className={
+                  location.pathname === '/women'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                href='/women'
+              >
                 Women
               </a>
             </li>
