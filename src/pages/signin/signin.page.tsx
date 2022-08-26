@@ -63,7 +63,7 @@ const Signin: FC<props> = () => {
             <Input
               formType='input'
               placeholder='Username'
-              name='agentId'
+              name='username'
               setValue={setUsername}
               value={username}
             />

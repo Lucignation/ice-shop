@@ -28,8 +28,6 @@ const Products = () => {
     try {
       const fetchProducts = async () => {
         const res = await axiosInstance.get(url);
-
-        //   setProducts(res.data);
         dispatch(GetProducts(res.data));
       };
 
