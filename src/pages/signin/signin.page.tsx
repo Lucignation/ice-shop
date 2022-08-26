@@ -11,7 +11,7 @@ import { setLogin } from '../../store/Reducer';
 import styles from './signin.module.scss';
 // import Button from '../../components/button/button.component';
 import Input from '../../components/Input/input.component';
-import Button from '../../components/button/button.component'
+import Button from '../../components/button/button.component';
 
 type props = {};
 const Signin: FC<props> = () => {
@@ -76,8 +76,8 @@ const Signin: FC<props> = () => {
             />
 
             <div className={styles.horizontal_line}></div>
-
-            <Button btnText='Sign in' />
+            <input type='submit' value='sign in' className='btn btn-primary' />
+            {/* <Button btnText='Sign in' /> */}
           </form>
         </div>
       </div>
