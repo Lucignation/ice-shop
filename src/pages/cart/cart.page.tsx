@@ -36,7 +36,9 @@ const Cart: FC<props> = () => {
         <div className={`row`}>
           <div className={`col-8`}>
             <table className={`table caption-top`}>
-              <caption>{cart.length} Items in the Cart</caption>
+              <caption>
+                {cart.length} Item{cart.length > 1 ? 's' : ''} in the Cart
+              </caption>
               <thead>
                 <tr>
                   <th scope={`col`}>N/S</th>
