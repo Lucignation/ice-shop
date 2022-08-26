@@ -13,6 +13,7 @@ import { GetProducts } from '../../store/Reducer';
 import { IProduct } from '../../common/product.interface';
 
 import { RootState } from '../../store/store';
+import { ICart } from '../../common/interfaces';
 
 type props = {};
 const Women: FC<props> = () => {

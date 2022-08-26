@@ -11,6 +11,7 @@ import CartItem from '../../components/cart-item/cart-item.component';
 import Summary from '../../components/summary/summary.component';
 
 import styles from './cart.module.scss';
+import { ICart } from '../../common/interfaces';
 
 type props = {};
 

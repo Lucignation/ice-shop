@@ -25,7 +25,7 @@ import { PrivateRoute } from './utils/Auth';
 import './App.scss';
 import { RootState } from './store/store';
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <Router>
@@ -93,7 +93,7 @@ const App = () => {
   );
 };
 
-export default App;
+// export default App;
 function useSelector(arg0: (state: RootState) => any) {
   throw new Error('Function not implemented.');
 }

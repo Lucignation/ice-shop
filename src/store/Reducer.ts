@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { IUser, IAccount } from '../common/interfaces';
 import { IProduct } from '../common/product.interface';
+import { ICart } from '../common/interfaces';
 
 const initialState: IAccount = {
   user: {

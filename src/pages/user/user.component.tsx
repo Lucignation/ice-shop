@@ -2,6 +2,8 @@ import { FC, useState } from 'react';
 import { IUser } from '../../common/interfaces';
 import Input from '../../components/Input/input.component';
 
+import styles from './user.module.scss';
+
 import axiosInstance from '../../axios/index';
 
 const User = () => {
@@ -46,7 +48,7 @@ const User = () => {
     console.log(res);
   };
   return (
-    <div>
+    <div className={styles.user_main}>
       <form onSubmit={handleSubmit}>
         <Input
           formType='text'

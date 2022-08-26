@@ -1,5 +1,7 @@
 import { FC, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { ICart } from '../../common/interfaces';
+import { IProduct } from '../../common/product.interface';
 import { RootState } from '../../store/store';
 import Input from '../Input/input.component';
 
@@ -11,6 +13,12 @@ const Summary = () => {
   const [promoCode, setPromoCode] = useState<string>('');
 
   const { cart } = currentState;
+
+  const prices = cart.map((product: IProduct) => Number(product.price));
+
+  const total = Number(prices.reduce((acc, price) => acc + price).toFixed(2));
+
+  console.log(total);
   return (
     <div className={styles.summary_main}>
       <h4 className={styles.summary_heading}>Order Summary</h4>
@@ -18,7 +26,7 @@ const Summary = () => {
 
       <div className={`row ${styles.summary_item_info}`}>
         <div className='col'>ITEM {cart.length}</div>
-        <div className='col'>$1,000</div>
+        <div className='col'>${total}</div>
       </div>
 
       <div className={`row ${styles.summary_vat_info}`}>
@@ -41,7 +49,7 @@ const Summary = () => {
 
       <div className={`row ${styles.summary_total_info}`}>
         <div className='col'>TOTAL COST</div>
-        <div className='col'>$1002</div>
+        <div className='col'>${total + 2}</div>
       </div>
 
       <input type='submit' value='CHECKOUT' className={`btn btn-info`} />

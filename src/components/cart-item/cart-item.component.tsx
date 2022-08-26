@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import styles from './cart-item.module.scss';
 
 import { RemoveItem } from '../../store/Reducer';
+import { ICart } from '../../common/interfaces';
 
 type props = {
   index: number;

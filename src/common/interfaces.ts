@@ -5,6 +5,7 @@ export interface IAccount {
   token: string;
   products: IProduct[];
   product: IProduct;
+  // cart: ICart[];
   cart: IProduct[];
 }
 
@@ -32,4 +33,9 @@ export interface IUser {
     };
   };
   phone: string;
+}
+
+export interface ICart {
+  product: IProduct;
+  quantity: number;
 }

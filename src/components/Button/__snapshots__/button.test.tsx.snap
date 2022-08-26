@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button :  renders a snapshot of <Button /> when btnType is primary  1`] = `
+<div>
+  <input
+    className="submit_btn"
+    type="submit"
+    value="mock BtnText"
+  />
+</div>
+`;
+
+exports[`Button :  renders a snapshot of <Button /> when btnType is something other primary  1`] = `
+<div>
+  <input
+    className="submit_btn_secondary"
+    type="submit"
+    value="mock BtnText"
+  />
+</div>
+`;

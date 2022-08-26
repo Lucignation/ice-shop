@@ -14,6 +14,7 @@ import globalStyles from '../../assets/css/styles.module.scss';
 
 import axiosInstance from '../../axios/index';
 import { RootState } from '../../store/store';
+import { ICart } from '../../common/interfaces';
 
 const Products = () => {
   const dispatch = useDispatch();

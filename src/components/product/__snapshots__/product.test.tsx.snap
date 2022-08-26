@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product:  renders a snapshot of <Product /> when each item is passed to the component 1`] = `
+<div
+  className="product_container"
+>
+  <div
+    className="product_image"
+  >
+    <img
+      alt="product title"
+      src="product image url"
+    />
+  </div>
+  <div
+    className="product_info_container"
+  >
+    <h4
+      className="product_title"
+    >
+      product title...
+    </h4>
+    <div
+      className="product_mid_main"
+    >
+      <span
+        className="product_price"
+      >
+        $
+        10
+      </span>
+      <span
+        className="product_category"
+      >
+        product category
+      </span>
+    </div>
+    <p
+      className="product_description"
+    >
+      product description...
+    </p>
+  </div>
+  <p
+    className="btn btn-outline-secondary add_to_cart_btn"
+    onClick={[Function]}
+  >
+    Add to cart
+  </p>
+</div>
+`;
