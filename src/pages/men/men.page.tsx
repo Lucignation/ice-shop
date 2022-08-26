@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import axiosInstance from '../../axios/index';
 
+import globalStyles from '../../assets/css/styles.module.scss';
+
 import Product from '../../components/product/product.component';
 import { GetProducts } from '../../store/Reducer';
 
@@ -35,16 +37,18 @@ const Men: FC<props> = () => {
 
   return (
     <div>
-      <h3>Electronics</h3>
-      {products.length > 1 ? (
-        products.map((product: IProduct) => (
-          <div key={product.id}>
-            <Product product={product} />
-          </div>
-        ))
-      ) : (
-        <p>LOading</p>
-      )}
+      <h3>Men's Clothing</h3>
+      <div className={globalStyles.products}>
+        {products.length > 1 ? (
+          products.map((product: IProduct) => (
+            <div key={product.id}>
+              <Product product={product} />
+            </div>
+          ))
+        ) : (
+          <p>LOading</p>
+        )}
+      </div>
     </div>
   );
 };

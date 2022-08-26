@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import globalStyles from '../../assets/css/styles.module.scss';
+
 import axiosInstance from '../../axios/index';
 
 import Product from '../../components/product/product.component';
@@ -18,8 +20,6 @@ const Electronics: FC<props> = () => {
   const currentState = useSelector((state: RootState) => state.user);
 
   const { products } = currentState;
-
-  //   const [products, setProducts] = useState<IProduct[]>();
 
   useEffect(() => {
     const url = 'products/category/electronics';
@@ -39,15 +39,17 @@ const Electronics: FC<props> = () => {
   return (
     <div>
       <h3>Electronics</h3>
-      {products.length > 1 ? (
-        products.map((product: IProduct) => (
-          <div key={product.id}>
-            <Product product={product} />
-          </div>
-        ))
-      ) : (
-        <p>LOading</p>
-      )}
+      <div className={globalStyles.products}>
+        {products.length > 1 ? (
+          products.map((product: IProduct) => (
+            <div key={product.id}>
+              <Product product={product} />
+            </div>
+          ))
+        ) : (
+          <p>LOading</p>
+        )}
+      </div>
     </div>
   );
 };

@@ -3,15 +3,50 @@
   border-radius: 5px;
   margin-bottom: 30px;
   //   width: 230px;
-  height: 520px;
+  height: 570px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 35px;
 }
 
+.product_image {
+  height: 300px;
+  overflow: hidden;
+}
+
 .product_image img {
   width: 170px;
+  margin-left: 90px;
 }
 
 .add_to_cart_btn {
   cursor: pointer;
+  padding-bottom: 140px;
+  text-align: center;
+}
+
+@media (max-width: 912px) {
+  .product_image img {
+    margin-left: 60px;
+  }
+}
+
+@media (max-width: 540px) {
+  .product_container {
+    //   background-color: red;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    //   width: 230px;
+    height: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 35px;
+  }
+
+  .product_image img {
+    margin-left: 40px;
+  }
+
+  .add_to_cart_btn {
+    cursor: pointer;
+    padding-bottom: 3px;
+  }
 }

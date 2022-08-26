@@ -10,6 +10,7 @@ import { GetProducts } from '../../store/Reducer';
 
 //import styles
 import styles from './products.module.scss';
+import globalStyles from '../../assets/css/styles.module.scss';
 
 import axiosInstance from '../../axios/index';
 import { RootState } from '../../store/store';
@@ -41,7 +42,7 @@ const Products = () => {
   console.log(products);
 
   return (
-    <div className={styles.products}>
+    <div className={globalStyles.products}>
       {products.length > 1 ? (
         products.map((product: IProduct) => (
           <div key={product.id}>

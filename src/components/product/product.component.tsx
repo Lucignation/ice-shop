@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { IProduct } from '../../common/product.interface';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 //imports from folders
 import { RemoveItem, AddItem } from '../../store/Reducer';
@@ -26,15 +27,29 @@ const Product: FC<props> = ({ product }) => {
     console.log(_product);
     if (cart.some((item: IProduct) => item.id === _product.id)) {
       dispatch(RemoveItem(_product)); //@RemoveItem -> this function removes item to cart in the reducer
+      const removeNotify = () =>
+        toast.warning(`${_product.title} removed`, {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      removeNotify();
     } else {
       dispatch(AddItem(_product)); //@AddItem -> this function adds item to cart in the reducer
+      const selectedNotify = () =>
+        toast.success(`${_product.title} selected`, {
+          theme: 'colored',
+          hideProgressBar: true,
+          position: 'top-center',
+        });
+      selectedNotify();
     }
   };
 
   const titleFirstPart = title.slice(0, 33);
   const titleShorten = titleFirstPart + '...';
 
-  const descriptionFirstPart = description.slice(0, 151);
+  const descriptionFirstPart = description.slice(0, 91);
   const descriptionShorten = descriptionFirstPart + '...';
   return (
     <div className={styles.product_container}>
@@ -51,7 +66,7 @@ const Product: FC<props> = ({ product }) => {
       </div>
       <p
         onClick={() => handleSelectItem(product)}
-        className={styles.add_to_cart_btn}
+        className={`btn btn-outline-secondary ${styles.add_to_cart_btn}`}
       >
         {cart.some((item: IProduct) => item.id === product.id)
           ? 'Remove from cart'
