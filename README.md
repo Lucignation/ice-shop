@@ -1,6 +1,6 @@
 # ICE SHOP
 
-A React Js e-commerce website. The homepage displays the list of products, signin page allows a user to signin and a token is stored in a localStorage.
+An e-commerce website built with [Api](https://fakestoreapi.com). The homepage displays the list of products, signin page allows a user to signin, all categories are electronics, jewelery, men and women. Add user and Update users are on a private routes. User page shows all users and only authenticated users can view cart and add to cart.
 
 ## Tech Stack
 
@@ -23,6 +23,8 @@ First, run the development server:
 
 ```bash
 npm i
+
+then
 
 npm start
 ```
