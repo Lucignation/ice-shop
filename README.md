@@ -218,7 +218,7 @@ export interface IProduct {
 
 - Home [Public Route](https://ice-shop.vercel.app/) (http://localhost:3000)
 
-- Users [Public Route](http://localhost:3000/users) (http://localhost:3000/users)
+- Users [Public Route](https://ice-shop.vercel.app/users) (http://localhost:3000/users)
 
 ## Private Pages
 
