@@ -36,7 +36,7 @@ const Users = () => {
   console.log(users);
   return (
     <div className={styles.users}>
-      {users.length > 1 ? (
+      {users?.length > 1 ? (
         users.map((user: IUser) => <User user={user} key={user.id} />)
       ) : (
         <p>Loading...</p>
