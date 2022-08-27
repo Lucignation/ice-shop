@@ -216,24 +216,26 @@ export interface IProduct {
 
 ## Public Pages
 
-- Home [Public Route](https://ice-shop.vercel.app/) (http://localhost:3000)
+- [Home](https://ice-shop.vercel.app/) (http://localhost:3000)
 
-- Users [Public Route](https://ice-shop.vercel.app/users) (http://localhost:3000/users)
+- [Users](https://ice-shop.vercel.app/users) (http://localhost:3000/users)
+
+- [Login](https://ice-shop.vercel.app/signin) (http://localhost:3000/signin)
 
 ## Private Pages
 
-- Cart [Private Route](https://ice-shop.vercel.app/cart) (http://localhost:3000/cart)
+- [Cart](https://ice-shop.vercel.app/cart) (http://localhost:3000/cart)
 
-- Add User [Private Route](https://ice-shop.vercel.app/add-user) (http://localhost:3000/add-user)
+- [Add User](https://ice-shop.vercel.app/add-user) (http://localhost:3000/add-user)
 
-- Update User [Private Route](https://ice-shop.vercel.app/user/2) (http://localhost:3000/user/2)
+- [Update User](https://ice-shop.vercel.app/user/2) (http://localhost:3000/user/2)
 
 ### Categories Pages
 
-- Electronics [Private Route](https://ice-shop.vercel.app/electronics) (http://localhost:3000/electronics)
+- [Electronics](https://ice-shop.vercel.app/electronics) (http://localhost:3000/electronics)
 
-- Jewelery [Private Route](https://ice-shop.vercel.app/jewelery) (http://localhost:3000/jewelery)
+- [Jewelery](https://ice-shop.vercel.app/jewelery) (http://localhost:3000/jewelery)
 
-- Men [Private Route](https://ice-shop.vercel.app/men) (http://localhost:3000/men)
+- [Men](https://ice-shop.vercel.app/men) (http://localhost:3000/men)
 
-- Women [Private Route](https://ice-shop.vercel.app/women) (http://localhost:3000/women)
+- [Women](https://ice-shop.vercel.app/women) (http://localhost:3000/women)
