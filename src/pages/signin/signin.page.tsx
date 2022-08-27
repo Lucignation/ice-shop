@@ -47,7 +47,7 @@ const Signin: FC<props> = () => {
 
     if (res.status == 200) {
       dispatch(setLogin(res.data));
-      navigate('/cart');
+      navigate(-1);
     }
 
     console.log(res);

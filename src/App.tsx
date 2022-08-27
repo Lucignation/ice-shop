@@ -15,14 +15,18 @@ import Electronics from './pages/electronics/electronics.page';
 import Jewelery from './pages/jewelery/jewelery.page';
 import Men from './pages/men/men.page';
 import Women from './pages/women/women.page';
+import Users from './pages/users/users.page';
+import AddUser from './pages/add-user/add-user.page';
 
+//import from components folder
 import User from './pages/user/user.component';
-
 import Navbar from './components/navbar/navbar.component';
 
+//Auth
 import { PrivateRoute } from './utils/Auth';
 
 import './App.scss';
+
 import { RootState } from './store/store';
 
 export const App = () => {
@@ -44,10 +48,28 @@ export const App = () => {
           />
 
           <Route
+            path='/user/:id'
+            element={
+              <PrivateRoute>
+                <User />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
             path='/user'
             element={
               <PrivateRoute>
                 <User />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path='/add-user'
+            element={
+              <PrivateRoute>
+                <AddUser />
               </PrivateRoute>
             }
           />
@@ -87,6 +109,8 @@ export const App = () => {
               </PrivateRoute>
             }
           />
+
+          <Route path='/users' element={<Users />} />
         </Routes>
       </Router>
     </>

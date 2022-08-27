@@ -5,7 +5,7 @@ export interface IAccount {
   token: string;
   products: IProduct[];
   product: IProduct;
-  // cart: ICart[];
+  users: IUser[];
   cart: IProduct[];
 }
 

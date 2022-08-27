@@ -39,7 +39,7 @@ const Jewelery: FC<props> = () => {
 
   return (
     <div>
-      <h3>Electronics</h3>
+      <h3>Jewelery</h3>
       <div className={globalStyles.products}>
         {products.length > 1 ? (
           products.map((product: IProduct) => (

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { IProduct } from '../../common/product.interface';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 //imports from folders
@@ -17,6 +18,8 @@ type props = {
 
 const Product: FC<props> = ({ product }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
 
   const { title, description, image, price, category } = product;
 
@@ -25,6 +28,10 @@ const Product: FC<props> = ({ product }) => {
   let { cart } = currentState;
 
   const handleSelectItem = (_product: IProduct) => {
+    if (!token) {
+      navigate('/signin');
+      return;
+    }
     console.log(_product);
     if (cart.some((item: IProduct) => item.id === _product.id)) {
       dispatch(RemoveItem(_product)); //@RemoveItem -> this function removes item to cart in the reducer

@@ -1,40 +1,16 @@
-import { FC, useState, useEffect } from 'react';
-import { NavLink, useParams, useNavigate } from 'react-router-dom';
+import { FC, useState } from 'react';
 import { IUser } from '../../common/interfaces';
 import Input from '../../components/Input/input.component';
-import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import { setUser } from '../../store/Reducer';
-
-import styles from './user.module.scss';
+import styles from './add-user.module.scss';
 
 import axiosInstance from '../../axios/index';
-import { RootState } from '../../store/store';
 
-const User = () => {
+const AddUser = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const currentState = useSelector((state: RootState) => state.user);
-  const { id } = useParams();
 
-  const { user } = currentState;
-
-  console.log(id);
-  useEffect(() => {
-    const fetchUser = async () => {
-      const url = `/users/${id}`;
-
-      try {
-        const res = await axiosInstance.get(url);
-        dispatch(setUser(res.data));
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchUser();
-  }, []);
-
+  //input states
   const [email, setEmail] = useState<string>('');
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -70,16 +46,14 @@ const User = () => {
       },
       phone: phone,
     };
-    const url = `/users/${id}`;
-    const res = await axiosInstance.put(url, user);
+    const url = 'users';
+    const res = await axiosInstance.post(url, user);
 
     if (res.status === 200) {
       navigate('/users');
     }
     console.log(res);
   };
-
-  console.log(user);
   return (
     <div className={styles.user_main}>
       <form onSubmit={handleSubmit}>
@@ -88,7 +62,7 @@ const User = () => {
           placeholder='Email'
           name='email'
           setValue={setEmail}
-          value={user ? user.email : email}
+          value={email}
         />
 
         <Input
@@ -96,7 +70,7 @@ const User = () => {
           placeholder='Username'
           name='username'
           setValue={setUsername}
-          value={user ? user.username : username}
+          value={username}
         />
 
         <Input
@@ -104,7 +78,7 @@ const User = () => {
           placeholder='Password'
           name='password'
           setValue={setPassword}
-          value={user ? user.password : password}
+          value={password}
         />
 
         <Input
@@ -112,7 +86,7 @@ const User = () => {
           placeholder='First Name'
           name='firstName'
           setValue={setFirstName}
-          value={user ? user.name.firstname : firstName}
+          value={firstName}
         />
 
         <Input
@@ -120,7 +94,7 @@ const User = () => {
           placeholder='Last Name'
           name='lastName'
           setValue={setLastName}
-          value={user ? user.name.lastname : lastName}
+          value={lastName}
         />
 
         <Input
@@ -128,7 +102,7 @@ const User = () => {
           placeholder='City'
           name='city'
           setValue={setCity}
-          value={user ? user.address.city : city}
+          value={city}
         />
 
         <Input
@@ -136,7 +110,7 @@ const User = () => {
           placeholder='Street'
           name='street'
           setValue={setStreet}
-          value={user ? user.address.street : street}
+          value={street}
         />
 
         <Input
@@ -144,7 +118,7 @@ const User = () => {
           placeholder='Number'
           name='num'
           setValue={setNum}
-          value={user ? user.address.number : num}
+          value={num}
         />
 
         <Input
@@ -152,7 +126,7 @@ const User = () => {
           placeholder='Zipcode'
           name='zipcode'
           setValue={setZipcode}
-          value={user ? user.address.zipcode : zipcode}
+          value={zipcode}
         />
 
         <Input
@@ -160,7 +134,7 @@ const User = () => {
           placeholder='Lat'
           name='lat'
           setValue={setLat}
-          value={user ? user.address.geolocation.lat : lat}
+          value={lat}
         />
 
         <Input
@@ -168,7 +142,7 @@ const User = () => {
           placeholder='Long'
           name='long'
           setValue={setLong}
-          value={user ? user.address.geolocation.long : long}
+          value={long}
         />
 
         <Input
@@ -176,30 +150,13 @@ const User = () => {
           placeholder='phone'
           name='phone'
           setValue={setPhone}
-          value={user ? user.phone : phone}
+          value={phone}
         />
 
-        <div className='row'>
-          <div className='col'>
-            <input
-              type='submit'
-              value='update user'
-              className='btn btn-primary'
-            />
-          </div>
-          <div className='col'>
-            <NavLink to='/add-user'>
-              <input
-                type='submit'
-                value='add user'
-                className='btn btn-secondary'
-              />
-            </NavLink>
-          </div>
-        </div>
+        <input type='submit' value='add user' />
       </form>
     </div>
   );
 };
 
-export default User;
+export default AddUser;

@@ -22,7 +22,6 @@ const Products = () => {
 
   const { products } = currentState;
 
-  //   const [products, setProducts] = useState<IProduct[]>();
 
   useEffect(() => {
     const url = 'products';

@@ -99,6 +99,19 @@ const Navbar = () => {
                 Women
               </a>
             </li>
+
+            <li className='nav-item'>
+              <a
+                className={
+                  location.pathname === '/users'
+                    ? 'nav-link active'
+                    : 'nav-link'
+                }
+                href='/users'
+              >
+                Users
+              </a>
+            </li>
           </ul>
           <div className={styles.cart}>
             <NavLink to='/cart'>

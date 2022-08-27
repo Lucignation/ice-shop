@@ -26,6 +26,7 @@ const initialState: IAccount = {
     },
     phone: '',
   },
+  users: [],
   token: '',
   products: [],
   product: {
@@ -43,10 +44,17 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state: IAccount, action: PayloadAction<IAccount>) => {
-      //   localStorage.setItem('token', action.payload.token);
-      //   // localStorage.removeItem('token');
-      //   state.user = action.payload.msg;
+    setUser: (state: IAccount, action: PayloadAction<IUser>) => {
+      return {
+        ...state,
+        user: action.payload,
+      };
+    },
+    getUsers: (state: IAccount, action: PayloadAction<IUser[]>) => {
+      return {
+        ...state,
+        users: action.payload,
+      };
     },
     setLogin: (state: IAccount, action: PayloadAction<IAccount>) => {
       localStorage.setItem('token', action.payload.token);
@@ -93,6 +101,7 @@ export const userSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const {
   setUser,
+  getUsers,
   logOut,
   setLogin,
   GetProducts,
