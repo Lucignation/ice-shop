@@ -9,11 +9,29 @@ A React Js e-commerce website. The homepage displays the list of products, signi
 3. TypeScript
 4. Redux Toolkit
 5. Bootstrap
+6. Jest
+7. React-test-renderer
 
 ## Frameworks and Libraries
 
 1. React
 2. Bootstrap
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm i
+
+npm start
+```
+
+To run run tests:
+
+```bash
+npm run test
+```
 
 ## API's
 
@@ -79,6 +97,72 @@ const res = await axios.get(
 console.log(res.data);
 ```
 
+### Get all users
+
+```javascript
+const res = await axios.get('https://fakestoreapi.com/users');
+
+console.log(res.data);
+```
+
+### Get add a new user
+
+```javascript
+const user = {
+  email,
+  username,
+  password,
+  name: {
+    firstname
+    lastname,
+  },
+  address: {
+    city,
+    street,
+    number,
+    zipcode,
+    geolocation: {
+      lat,
+      long,
+    },
+  },
+  phone: phone,
+};
+
+const res = await axios.post('https://fakestoreapi.com/users', user);
+
+console.log(res.data);
+```
+
+### Get update an existing user
+
+```javascript
+const user = {
+  email,
+  username,
+  password,
+  name: {
+    firstname
+    lastname,
+  },
+  address: {
+    city,
+    street,
+    number,
+    zipcode,
+    geolocation: {
+      lat,
+      long,
+    },
+  },
+  phone: phone,
+};
+
+const res = await axios.put('https://fakestoreapi.com/users/1', user);
+
+console.log(res.data);
+```
+
 ### Global State interface
 
 ```javascript
@@ -129,3 +213,27 @@ export interface IProduct {
   image: string;
 }
 ```
+
+## Public Pages
+
+- Home [Public Route](https://ice-shop.vercel.app/) (http://localhost:3000)
+
+- Users [Public Route](http://localhost:3000/users) (http://localhost:3000/users)
+
+## Private Pages
+
+- Cart [Private Route](https://ice-shop.vercel.app/cart) (http://localhost:3000/cart)
+
+- Add User [Private Route](https://ice-shop.vercel.app/add-user) (http://localhost:3000/add-user)
+
+- Update User [Private Route](https://ice-shop.vercel.app/user/2) (http://localhost:3000/user/2)
+
+### Categories Pages
+
+- Electronics [Private Route](https://ice-shop.vercel.app/electronics) (http://localhost:3000/electronics)
+
+- Jewelery [Private Route](https://ice-shop.vercel.app/jewelery) (http://localhost:3000/jewelery)
+
+- Men [Private Route](https://ice-shop.vercel.app/men) (http://localhost:3000/men)
+
+- Women [Private Route](https://ice-shop.vercel.app/women) (http://localhost:3000/women)

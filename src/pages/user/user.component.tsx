@@ -35,18 +35,18 @@ const User = () => {
     fetchUser();
   }, []);
 
-  const [email, setEmail] = useState<string>('');
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [firstName, setFirstName] = useState<string>('');
-  const [lastName, setLastName] = useState<string>('');
-  const [street, setStreet] = useState<string>('');
-  const [city, setCity] = useState<string>('');
-  const [num, setNum] = useState<number>(0);
-  const [zipcode, setZipcode] = useState<string>('');
-  const [lat, setLat] = useState<string>('');
-  const [long, setLong] = useState<string>('');
-  const [phone, setPhone] = useState<string>('');
+  const [email, setEmail] = useState<string>(user.email);
+  const [username, setUsername] = useState<string>(user.username);
+  const [password, setPassword] = useState<string>(user.password);
+  const [firstName, setFirstName] = useState<string>(user.name.firstname);
+  const [lastName, setLastName] = useState<string>(user.name.lastname);
+  const [street, setStreet] = useState<string>(user.address.street);
+  const [city, setCity] = useState<string>(user.address.city);
+  const [num, setNum] = useState<number>(user.address.number);
+  const [zipcode, setZipcode] = useState<string>(user.address.zipcode);
+  const [lat, setLat] = useState<string>(user.address.geolocation.lat);
+  const [long, setLong] = useState<string>(user.address.geolocation.long);
+  const [phone, setPhone] = useState<string>(user.phone);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -88,7 +88,7 @@ const User = () => {
           placeholder='Email'
           name='email'
           setValue={setEmail}
-          value={user ? user.email : email}
+          value={email}
         />
 
         <Input
@@ -96,7 +96,7 @@ const User = () => {
           placeholder='Username'
           name='username'
           setValue={setUsername}
-          value={user ? user.username : username}
+          value={username}
         />
 
         <Input
@@ -104,7 +104,7 @@ const User = () => {
           placeholder='Password'
           name='password'
           setValue={setPassword}
-          value={user ? user.password : password}
+          value={password}
         />
 
         <Input
@@ -112,7 +112,7 @@ const User = () => {
           placeholder='First Name'
           name='firstName'
           setValue={setFirstName}
-          value={user ? user.name.firstname : firstName}
+          value={firstName}
         />
 
         <Input
@@ -120,7 +120,7 @@ const User = () => {
           placeholder='Last Name'
           name='lastName'
           setValue={setLastName}
-          value={user ? user.name.lastname : lastName}
+          value={lastName}
         />
 
         <Input
@@ -128,7 +128,7 @@ const User = () => {
           placeholder='City'
           name='city'
           setValue={setCity}
-          value={user ? user.address.city : city}
+          value={city}
         />
 
         <Input
@@ -136,7 +136,7 @@ const User = () => {
           placeholder='Street'
           name='street'
           setValue={setStreet}
-          value={user ? user.address.street : street}
+          value={street}
         />
 
         <Input
@@ -144,7 +144,7 @@ const User = () => {
           placeholder='Number'
           name='num'
           setValue={setNum}
-          value={user ? user.address.number : num}
+          value={num}
         />
 
         <Input
@@ -152,7 +152,7 @@ const User = () => {
           placeholder='Zipcode'
           name='zipcode'
           setValue={setZipcode}
-          value={user ? user.address.zipcode : zipcode}
+          value={zipcode}
         />
 
         <Input
@@ -160,7 +160,7 @@ const User = () => {
           placeholder='Lat'
           name='lat'
           setValue={setLat}
-          value={user ? user.address.geolocation.lat : lat}
+          value={lat}
         />
 
         <Input
@@ -168,7 +168,7 @@ const User = () => {
           placeholder='Long'
           name='long'
           setValue={setLong}
-          value={user ? user.address.geolocation.long : long}
+          value={long}
         />
 
         <Input
@@ -176,7 +176,7 @@ const User = () => {
           placeholder='phone'
           name='phone'
           setValue={setPhone}
-          value={user ? user.phone : phone}
+          value={phone}
         />
 
         <div className='row'>

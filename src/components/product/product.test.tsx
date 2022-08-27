@@ -2,6 +2,8 @@ import Product from './product.component';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 const mockProps = {
   id: 1,
   title: 'product title',
@@ -16,7 +18,9 @@ describe('Product: ', () => {
     const product = renderer
       .create(
         <Provider store={store}>
-          <Product product={mockProps} />
+          <Router>
+            <Product product={mockProps} />
+          </Router>
         </Provider>
       )
       .toJSON();

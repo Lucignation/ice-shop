@@ -10,7 +10,6 @@ import { RemoveItem, AddItem } from '../../store/Reducer';
 //styles
 import styles from './product.module.scss';
 import { RootState } from '../../store/store';
-import { ICart } from '../../common/interfaces';
 
 type props = {
   product: IProduct;
