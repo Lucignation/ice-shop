@@ -105,7 +105,7 @@ const res = await axios.get('https://fakestoreapi.com/users');
 console.log(res.data);
 ```
 
-### Get add a new user
+### Post add a new user
 
 ```javascript
 const user = {
@@ -134,7 +134,7 @@ const res = await axios.post('https://fakestoreapi.com/users', user);
 console.log(res.data);
 ```
 
-### Get update an existing user
+### Put update an existing user
 
 ```javascript
 const user = {
