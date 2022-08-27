@@ -2,7 +2,7 @@
 
 An e-commerce website built with [Api](https://fakestoreapi.com). The homepage displays the list of products, sign-in page allows a user to sign-in, all categories are electronics, jewelery, men and women. Add user and Update users are on a private routes. User page shows all users and only authenticated users can view cart and add to cart.
 
-## Tech Stack
+## Frameworks and Libraries
 
 1. React
 2. SCSS
@@ -11,11 +11,6 @@ An e-commerce website built with [Api](https://fakestoreapi.com). The homepage d
 5. Bootstrap
 6. Jest
 7. React-test-renderer
-
-## Frameworks and Libraries
-
-1. React
-2. Bootstrap
 
 ## Getting Started
 
