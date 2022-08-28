@@ -239,4 +239,7 @@ export interface IProduct {
 
 ### Follow Gerald Olumide
 
-- [LinkedIn](https://linkedin.com/in/geraldolumide) - [Twitter](https://twitter.com/lucignation) - [GitHub](https://github.com/lcuignation) -[Medium](https://medium.com/@lucignation)
+- [LinkedIn](https://linkedin.com/in/geraldolumide)
+- [Twitter](https://twitter.com/lucignation)
+- [GitHub](https://github.com/lcuignation) 
+-[Medium](https://medium.com/@lucignation)
