@@ -241,5 +241,5 @@ export interface IProduct {
 
 - [LinkedIn](https://linkedin.com/in/geraldolumide)
 - [Twitter](https://twitter.com/lucignation)
-- [GitHub](https://github.com/lcuignation)
+- [GitHub](https://github.com/lucignation)
 - [Medium](https://medium.com/@lucignation)
