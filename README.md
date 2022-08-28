@@ -243,3 +243,4 @@ export interface IProduct {
 - [Twitter](https://twitter.com/lucignation)
 - [GitHub](https://github.com/lucignation)
 - [Medium](https://medium.com/@lucignation)
+- [Portfolio](https://gerald.vercel.app)
