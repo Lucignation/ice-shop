@@ -4,14 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { IProduct } from '../../common/product.interface';
 import { RootState } from '../../store/store';
 
-import { RemoveItem } from '../../store/Reducer';
-
 //import from folders
 import CartItem from '../../components/cart-item/cart-item.component';
 import Summary from '../../components/summary/summary.component';
 
 import styles from './cart.module.scss';
-import { ICart } from '../../common/interfaces';
 
 type props = {};
 
@@ -21,10 +18,6 @@ const Cart: FC<props> = () => {
   const currentState = useSelector((state: RootState) => state.user);
 
   let { cart } = currentState;
-
-  const handleRemoveItem = (_product: IProduct) => {
-    dispatch(RemoveItem(_product));
-  };
 
   const handleGoBack = () => {
     navigate(-1);
@@ -50,12 +43,7 @@ const Cart: FC<props> = () => {
               </thead>
               <tbody>
                 {cart.map((product: IProduct, index: number) => (
-                  <CartItem
-                    index={index}
-                    product={product}
-                    key={product.id}
-                    removeItem={() => handleRemoveItem(product)}
-                  />
+                  <CartItem index={index} product={product} key={product.id} />
                 ))}
               </tbody>
             </table>

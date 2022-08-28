@@ -10,10 +10,9 @@ import { ICart } from '../../common/interfaces';
 type props = {
   index: number;
   product: IProduct;
-  removeItem: (product: IProduct) => void;
 };
 
-const CartItem: FC<props> = ({ index, product, removeItem }) => {
+const CartItem: FC<props> = ({ index, product }) => {
   const dispatch = useDispatch();
 
   const { title, image, price } = product;

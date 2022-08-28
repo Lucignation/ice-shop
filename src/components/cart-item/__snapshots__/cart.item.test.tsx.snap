@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart Item  renders a snapshot of <CartItem /> when it is passed into a component  1`] = `
+<tr>
+  <th
+    scope="row"
+  >
+    1
+  </th>
+  <td
+    className="product_image"
+  >
+    <img
+      alt="product title"
+      src="product image url"
+    />
+  </td>
+  <td
+    className="product_title"
+  >
+    product title
+  </td>
+  <td
+    className="product_price"
+  >
+    $
+    10
+  </td>
+  <td
+    onClick={[Function]}
+  >
+    <p
+      className="btn btn-danger"
+    >
+      Remove
+    </p>
+  </td>
+</tr>
+`;

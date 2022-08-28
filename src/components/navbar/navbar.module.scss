@@ -1,3 +1,7 @@
+nav {
+  padding: 10px 50px !important;
+}
+
 .cart_link {
   cursor: pointer;
   margin-left: 10px;
@@ -8,6 +12,7 @@
 .cart {
   position: relative;
   margin-right: 30px !important;
+  margin-left: 10px;
 }
 
 .cart a {

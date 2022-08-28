@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { FaUserAlt } from 'react-icons/fa';
 
 import { logOut } from '../../store/Reducer';
 import { RootState } from '../../store/store';
@@ -99,20 +100,17 @@ const Navbar = () => {
                 Women
               </a>
             </li>
-
-            <li className='nav-item'>
-              <a
-                className={
-                  location.pathname === '/users'
-                    ? 'nav-link active'
-                    : 'nav-link'
-                }
-                href='/users'
-              >
-                Users
-              </a>
-            </li>
           </ul>
+          <div>
+            <a
+              className={
+                location.pathname === '/users' ? 'nav-link active' : 'nav-link'
+              }
+              href='/users'
+            >
+              <FaUserAlt />
+            </a>
+          </div>
           <div className={styles.cart}>
             <NavLink to='/cart'>
               <span className={`navbar-text ${styles.cart_link}`}>Cart</span>\
@@ -122,12 +120,15 @@ const Navbar = () => {
             </span>
           </div>
           {token ? (
-            <span className='navbar-text btn' onClick={handleLogout}>
+            <span
+              className='navbar-text text-white btn btn-dark'
+              onClick={handleLogout}
+            >
               Logout
             </span>
           ) : (
-            <NavLink to='/signin'>
-              <span className='navbar-text'>Login</span>
+            <NavLink to='/signin' className=' btn btn-dark'>
+              <span className='navbar-text text-white'>Login</span>
             </NavLink>
           )}
         </div>

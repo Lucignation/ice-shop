@@ -1,13 +1,13 @@
 import axiosInstance from '../../axios/index';
 
 const fetchData = async () => {
-  const res = await axiosInstance.get('products/category/electronics');
+  const res = await axiosInstance.get("products/category/men's clothing");
   return res.data;
 };
 
 const mockData = fetchData();
 
-test('the data is a array of products', async () => {
+test('the data is an array of products', async () => {
   const data = await fetchData();
   expect(data).toMatchSnapshot(mockData);
 });

@@ -236,3 +236,7 @@ export interface IProduct {
 - [Men](https://ice-shop.vercel.app/men) (http://localhost:3000/men)
 
 - [Women](https://ice-shop.vercel.app/women) (http://localhost:3000/women)
+
+### Follow Gerald Olumide
+
+- [LinkedIn](https://linkedin.com/in/geraldolumide) - [Twitter](https://twitter.com/lucignation) - [GitHub](https://github.com/lcuignation) -[Medium](https://medium.com/@lucignation)

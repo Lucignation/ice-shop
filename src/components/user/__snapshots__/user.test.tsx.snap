@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`User  renders a snapshot of <User /> when it it passed into a component  1`] = `
+<div
+  className="card user_card"
+>
+  <div
+    className="card-body"
+  >
+    <h5
+      className="card-title"
+    >
+      <span
+        className="title"
+      >
+        Full Name
+      </span>
+      : 
+      Gerald
+       
+      Olumide
+    </h5>
+    <h6
+      className="card-subtitle mb-2 text-muted"
+    >
+       
+      <span
+        className="title"
+      >
+        Username
+      </span>
+      : 
+      lucignation
+    </h6>
+    <h6
+      className="card-subtitle mb-2 text-muted"
+    >
+      <span
+        className="title"
+      >
+        Address
+      </span>
+      : 
+      45
+      ,
+       
+      my street
+      , 
+      Lagos
+      , 
+      434
+    </h6>
+    <h6
+      className="card-subtitle mb-2 text-muted"
+    >
+       
+      <span
+        className="title"
+      >
+        Phone
+      </span>
+      : 
+      345676543456
+    </h6>
+    <h6
+      className="card-subtitle mb-2 text-muted"
+    >
+       
+      <span
+        className="title"
+      >
+        Email
+      </span>
+      : 
+      lucignation@gmail.com
+    </h6>
+    <h6
+      className="card-subtitle mb-2 text-muted"
+    >
+      <span
+        className="title"
+      >
+        Lat
+      </span>
+      : 
+      -43556
+       
+      <span
+        className="title"
+      >
+        Long
+      </span>
+      : 
+      4688
+    </h6>
+    <a
+      className="btn btn-info"
+      href="/user/1"
+      onClick={[Function]}
+    >
+      Edit
+    </a>
+  </div>
+</div>
+`;

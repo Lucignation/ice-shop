@@ -47,7 +47,7 @@ const Women: FC<props> = () => {
             </div>
           ))
         ) : (
-          <p>LOading</p>
+          <p>Loading...</p>
         )}
       </div>
     </div>
