@@ -31,3 +31,15 @@ nav {
   left: 35px;
   color: #fff !important;
 }
+
+@media (max-width: 912px) {
+  nav {
+    padding: 10px 32px !important;
+  }
+}
+
+@media (max-width: 540px) {
+  nav {
+    padding: 10px 30px !important;
+  }
+}

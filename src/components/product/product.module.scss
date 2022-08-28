@@ -3,7 +3,7 @@
   border-radius: 5px;
   margin-bottom: 30px;
   //   width: 230px;
-  height: 570px;
+  height: 600px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 35px;
 }
@@ -11,6 +11,17 @@
 .product_image {
   height: 300px;
   overflow: hidden;
+}
+
+.product_price {
+  color: #525252;
+}
+.product_category {
+  color: #009675;
+}
+
+.product_mid_main {
+  padding: 15px 0px;
 }
 
 .product_image img {

@@ -1,55 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the data is a array of users 1`] = `
-Object {
-  "__v": 0,
-  "address": Object {
-    "city": "Cullman",
-    "geolocation": Object {
-      "lat": "40.3467",
-      "long": "-30.1310",
-    },
-    "number": 86,
-    "street": "Frances Ct",
-    "zipcode": "29567-1452",
-  },
-  "email": "kevin@gmail.com",
-  "id": 3,
-  "name": Object {
-    "firstname": "kevin",
-    "lastname": "ryan",
-  },
-  "password": "kev02937@",
-  "phone": "1-567-094-1345",
-  "username": "kevinryan",
-}
-`;
-
-exports[`the data is a si of users 1`] = `
-Object {
-  "__v": 0,
-  "address": Object {
-    "city": "Cullman",
-    "geolocation": Object {
-      "lat": "40.3467",
-      "long": "-30.1310",
-    },
-    "number": 86,
-    "street": "Frances Ct",
-    "zipcode": "29567-1452",
-  },
-  "email": "kevin@gmail.com",
-  "id": 3,
-  "name": Object {
-    "firstname": "kevin",
-    "lastname": "ryan",
-  },
-  "password": "kev02937@",
-  "phone": "1-567-094-1345",
-  "username": "kevinryan",
-}
-`;
-
 exports[`the data is a single user 1`] = `
 Object {
   "__v": 0,

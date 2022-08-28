@@ -21,16 +21,16 @@ exports[`Product:  renders a snapshot of <Product /> when each item is passed to
       product title...
     </h4>
     <div
-      className="product_mid_main"
+      className=" row product_mid_main"
     >
       <span
-        className="product_price"
+        className="col product_price"
       >
         $
         10
       </span>
       <span
-        className="product_category"
+        className="col product_category"
       >
         product category
       </span>

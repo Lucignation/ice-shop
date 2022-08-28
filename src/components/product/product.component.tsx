@@ -65,9 +65,9 @@ const Product: FC<props> = ({ product }) => {
       </div>
       <div className={styles.product_info_container}>
         <h4 className={styles.product_title}>{titleShorten}</h4>
-        <div className={styles.product_mid_main}>
-          <span className={styles.product_price}>${price}</span>
-          <span className={styles.product_category}>{category}</span>
+        <div className={` row ${styles.product_mid_main}`}>
+          <span className={`col ${styles.product_price}`}>${price}</span>
+          <span className={`col ${styles.product_category}`}>{category}</span>
         </div>
         <p className={styles.product_description}>{descriptionShorten}</p>
       </div>
